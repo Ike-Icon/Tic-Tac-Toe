@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/main.js" defer></script>
+    <title>Tic Tac Toe</title>
+</head>
+
+<body>
+     <div class="scoreboard" id="scoreboard">
+            <div class="scoreboard-item">
+                <span class="scoreboard-label">X: </span>
+                <span class="scoreboard-score" id="score-x">0</span>
+            </div>
+            <div class="scoreboard-item">
+                <span class="scoreboard-label">O: </span>
+                <span class="scoreboard-score" id="score-o">0</span>
+            </div>
+            <button id="resetScore" >Reset Scores</button>
+            
+        </div>
+    <div class="container" id="container">
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+
+
+       
+    </div>
+    <div class="winningMessage" id="winningMessage">
+        <div data-winning-message-text></div>
+        <button id="restartButton">Restart</button>
+    </div>
+
+
+
+</body>
+
+</html>
