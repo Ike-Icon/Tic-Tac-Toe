@@ -13,6 +13,14 @@ const WINNING_COMBINATION = [
     [2, 4, 6]
 ]
 
+class scoreInfo {
+    constructor() {
+        this.playerOName = scores[1];
+        this.playerXName = scores[0];
+        // this.scores = [0, 0]; // [X, O]
+    }
+} 
+
 // Then declare the DOM elements that will be used in the game.
 const cellElements = document.querySelectorAll("[data-cell]")
 const container = document.getElementById("container")
@@ -22,6 +30,9 @@ const restartButton = document.getElementById("restartButton")
 const scoreboard = document.getElementById("scoreboard")
 const scoreX = document.getElementById("score-x")
 const scoreO = document.getElementById("score-o")
+const playerX = document.getElementById("playerXName")
+const playerO = document.getElementById("playerOName")
+
 const scoreReset = document.getElementById("resetScore")
 
 // Create a variable to keep track of the current player.
@@ -29,7 +40,8 @@ let circleTurn
 
 // Call the startGame function to start the game before everything else
 startGame()
-updateScore();
+enterNames();
+updateScoreboard()
 
 // When the restart button is clicked, the game should reset.
 restartButton.addEventListener("click", startGame)
@@ -80,6 +92,7 @@ function endGame(draw) {
     }
     winningMessageElement.classList.add("show")
 }
+
 // Check if the board is full and there is no win, then it's a draw.
 function isDraw() {
     return [...cellElements].every(cell => {
@@ -130,26 +143,40 @@ function updateScoreboard() {
 scoreReset.addEventListener("click", () => {
     scores[0] = 0;
     scores[1] = 0;
-    updateScore();
+    updateScoreboard()
 });
 
 
 // This function will be used to make the computer play against the user.
-function computerPlay() {
-    const emptyCells = [...cellElements].filter(cell => !cell.classList.contains(X_CLASS) && !cell.classList.contains(O_CLASS));
-    if (emptyCells.length > 0) {
-        const randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
-        placemark(randomCell, O_CLASS);
-        if (checkWin(O_CLASS)) {
-            endGame(false);
-        } else if (isDraw()) {
-            endGame(true);
-        } else {
-            swapTurn();
-            setCellHoverClass();
-        }
+// function computerPlay() {
+//     const emptyCells = [...cellElements].filter(cell => !cell.classList.contains(X_CLASS) && !cell.classList.contains(O_CLASS));
+//     if (emptyCells.length > 0) {
+//         const randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+//         placemark(randomCell, O_CLASS);
+//         if (checkWin(O_CLASS)) {
+//             endGame(false);
+//         } else if (isDraw()) {
+//             endGame(true);
+//         } else {
+//             swapTurn();
+//             setCellHoverClass();
+//         }
+//     }
+// }
+
+// Let user enter their names before game starts.
+function enterNames() {
+    const playerXName = prompt("Enter name for Player X:");
+    const playerOName = prompt("Enter name for Player O:");
+    if (playerXName) {
+        playerX.innerText = `${playerXName}(X): `;
     }
+    if (playerOName) {
+        playerO.innerText = `${playerOName}(O): `;
+    }
+
 }
 
+// // Call the enterNames function to prompt for player names.
 
 
