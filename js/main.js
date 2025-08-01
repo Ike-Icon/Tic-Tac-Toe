@@ -29,7 +29,7 @@ let circleTurn
 
 // Call the startGame function to start the game before everything else
 startGame()
-updateScoreboard();
+updateScore();
 
 // When the restart button is clicked, the game should reset.
 restartButton.addEventListener("click", startGame)
@@ -130,7 +130,7 @@ function updateScoreboard() {
 scoreReset.addEventListener("click", () => {
     scores[0] = 0;
     scores[1] = 0;
-    updateScoreboard();
+    updateScore();
 });
 
 
