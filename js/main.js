@@ -148,24 +148,6 @@ scoreReset.addEventListener("click", () => {
     updateScoreboard()
 });
 
-
-// This function will be used to make the computer play against the user.
-// function computerPlay() {
-//     const emptyCells = [...cellElements].filter(cell => !cell.classList.contains(X_CLASS) && !cell.classList.contains(O_CLASS));
-//     if (emptyCells.length > 0) {
-//         const randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
-//         placemark(randomCell, O_CLASS);
-//         if (checkWin(O_CLASS)) {
-//             endGame(false);
-//         } else if (isDraw()) {
-//             endGame(true);
-//         } else {
-//             swapTurn();
-//             setCellHoverClass();
-//         }
-//     }    
-// }
-
 // Let user enter their names before game starts.
 function enterNames() {
     playerXName = document.getElementById("enterPlayerX").value;
@@ -194,7 +176,5 @@ oButton.addEventListener("click", () => {
         console.log(`Player O Name: ${playerONameInput}`);
     }
 });
-
-// // Call the enterNames function to prompt for player names.
 
 

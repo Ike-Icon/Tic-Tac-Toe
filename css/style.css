@@ -10,20 +10,21 @@
 body {
     margin: 0;
     background-color: #fefae0;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .container {
-    width: 60vw;
-    height: 70vh;
+    width: 500px;
+    height: 500px;
     display: grid;
     justify-content: center;
     justify-items: center;
     align-items: center;
     align-content: center;
     grid-template-columns: repeat(3, auto);
-    background-color: #fefae0;
-    margin: 10px auto;
+    background-color: #2d2c26;
+    margin: 50px auto;
+    border-radius: 10px;
 }
 
 .cell {
@@ -139,7 +140,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin-top: 20px; */
     background-color: #e9edc9;
     padding:15px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -177,6 +177,7 @@ header{
     background-color: #31441b;
     padding:15px 0;
     flex-direction: column;
+
 }
 
 header h1 {
@@ -196,7 +197,6 @@ header h1 {
 .player-info input {
     width: 200px;
     padding: 7px;
-    /* border: 2px solid #283618; */
     border-radius: 10px;
     font-size: 1.2rem;
 }
