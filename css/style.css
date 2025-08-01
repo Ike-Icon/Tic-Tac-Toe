@@ -173,7 +173,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 5px;
     background-color: #31441b;
     padding:15px 0;
     flex-direction: column;
