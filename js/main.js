@@ -30,8 +30,10 @@ const restartButton = document.getElementById("restartButton")
 const scoreboard = document.getElementById("scoreboard")
 const scoreX = document.getElementById("score-x")
 const scoreO = document.getElementById("score-o")
-const playerX = document.getElementById("playerXName")
-const playerO = document.getElementById("playerOName")
+const xButton = document.getElementById("submitPlayerX")
+const oButton = document.getElementById("submitPlayerO")
+const playerOName = document.getElementById("playerOName")
+const playerXName = document.getElementById("playerXName")
 
 const scoreReset = document.getElementById("resetScore")
 
@@ -40,7 +42,7 @@ let circleTurn
 
 // Call the startGame function to start the game before everything else
 startGame()
-enterNames();
+// enterNames();
 updateScoreboard()
 
 // When the restart button is clicked, the game should reset.
@@ -161,13 +163,13 @@ scoreReset.addEventListener("click", () => {
 //             swapTurn();
 //             setCellHoverClass();
 //         }
-//     }
+//     }    
 // }
 
 // Let user enter their names before game starts.
 function enterNames() {
-    const playerXName = prompt("Enter name for Player X:");
-    const playerOName = prompt("Enter name for Player O:");
+    playerXName = document.getElementById("enterPlayerX").value;
+    playerOName = document.getElementById("enterPlayerO").value;
     if (playerXName) {
         playerX.innerText = `${playerXName}(X): `;
     }
@@ -176,6 +178,22 @@ function enterNames() {
     }
 
 }
+
+xButton.addEventListener("click", () => {
+    const playerXNameInput = document.getElementById("enterPlayerX").value;
+    if (playerXNameInput) {
+        playerXName.innerText = `${playerXNameInput}(X): `;
+        console.log(`Player X Name: ${playerXNameInput}`);
+    }
+});
+
+oButton.addEventListener("click", () => {
+    const playerONameInput = document.getElementById("enterPlayerO").value;
+    if (playerONameInput) {
+        playerOName.innerText = `${playerONameInput}(O): `;
+        console.log(`Player O Name: ${playerONameInput}`);
+    }
+});
 
 // // Call the enterNames function to prompt for player names.
 

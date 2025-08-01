@@ -12,18 +12,47 @@
 </head>
 
 <body>
-     <div class="scoreboard" id="scoreboard">
-            <div class="scoreboard-item">
-                <span class="scoreboard-label" id="playerXName"></span>
-                <span class="scoreboard-score" id="score-x">0</span>
-            </div>
-            <div class="scoreboard-item">
-                <span class="scoreboard-label" id="playerOName"></span>
-                <span class="scoreboard-score" id="score-o">0</span>
-            </div>
-            <button id="resetScore" >Reset Scores</button>
+    <header>
+        <h1>Tic Tac Toe</h1>
+        <div id="info">
             
+            <!-- <h2>Scoreboard</h2> -->
+            <div class="player-info">
+
+
+                <div class="playerX">
+                    <label for="enterPlayerX"></label>
+                    <input type="text" id="enterPlayerX" placeholder="Enter Player X Name">
+                    <button id="submitPlayerX">Submit</button>
+                </div>
+
+
+                <div class="playerO">
+                    <label for="enterPlayerO"></label>
+                    <input type="text" id="enterPlayerO" placeholder="Enter Player O Name">
+                    <button type="submit" id="submitPlayerO">Submit</button>
+
+                </div>
+            </div>
+
         </div>
+    </header>
+
+
+    <div class="scoreboard" id="scoreboard">
+
+
+        <div class="scoreboard-item">
+            <span class="scoreboard-label" id="playerXName"></span>
+            <span class="scoreboard-score" id="score-x">0</span>
+        </div>
+        <div class="scoreboard-item">
+            <span class="scoreboard-label" id="playerOName"></span>
+            <span class="scoreboard-score" id="score-o">0</span>
+        </div>
+        <button id="resetScore">Reset Scores</button>
+
+    </div>
     <div class="container" id="container">
         <div class="cell" data-cell></div>
         <div class="cell" data-cell></div>
@@ -36,7 +65,7 @@
         <div class="cell" data-cell></div>
 
 
-       
+
     </div>
     <div class="winningMessage" id="winningMessage">
         <div data-winning-message-text></div>
